@@ -6,9 +6,11 @@ import {
 import React, { FC } from 'react'
 
 import { HomeScreen } from '../screens/HomeScreen'
+import { PlayerScreen } from '../screens/PlayerScreen'
 
 export type RootNavigatorParamList = {
   Home: undefined
+  Player: undefined
 }
 
 export type RootNavigatorProps<
@@ -24,6 +26,11 @@ export const RootNavigator: FC = () => {
   return (
     <Stack.Navigator initialRouteName='Home'>
       <Stack.Screen name='Home' component={HomeScreen} />
+      <Stack.Screen
+        options={{ headerShown: false, orientation: 'landscape' }}
+        name='Player'
+        component={PlayerScreen}
+      />
     </Stack.Navigator>
   )
 }
