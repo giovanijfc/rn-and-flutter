@@ -34,7 +34,6 @@ module.exports = {
     'import/newline-after-import': 'warn',
     'import/no-duplicates': 'warn',
     'no-shadow': 'off',
-    radix: 'off',
-    'no-undef': 'off'
+    radix: 'off'
   }
 }
