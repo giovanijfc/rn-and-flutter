@@ -53,7 +53,7 @@ export const PlayerScreen: FC = () => {
     <Container>
       <Video
         source={{
-          uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
+          uri: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
         }} // Can be a URL or a local file.
         onBuffer={data => setIsLoading(data.isBuffering)} // Callback when remote video is buffering
         onError={e => console.log('on Error', { e })} // Callback when video cannot be loaded
@@ -101,6 +101,7 @@ export const PlayerScreen: FC = () => {
 
 const Container = styled.View`
   flex: 1;
+  background-color: black;
 `
 
 const Overflow = styled.View`

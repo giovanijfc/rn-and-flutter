@@ -25,7 +25,11 @@ const Stack = createNativeStackNavigator<RootNavigatorParamList>()
 export const RootNavigator: FC = () => {
   return (
     <Stack.Navigator initialRouteName='Home'>
-      <Stack.Screen name='Home' component={HomeScreen} />
+      <Stack.Screen
+        options={{ orientation: 'portrait' }}
+        name='Home'
+        component={HomeScreen}
+      />
       <Stack.Screen
         options={{ headerShown: false, orientation: 'landscape' }}
         name='Player'

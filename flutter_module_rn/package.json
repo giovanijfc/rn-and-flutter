@@ -1,24 +1,29 @@
 {
-  "name": "flutter_module_rn",
-  "title": "Flutter_module_rn",
+  "name": "flutter-module-rn",
+  "title": "Flutter Module RN",
   "version": "1.0.0",
   "description": "TODO",
   "main": "index.js",
   "files": [
     "README.md",
-    "android",
+    "android-rn",
     "index.js",
-    "ios",
-    "flutter_module_rn.podspec"
+    "ios-rn",
+    "FlutterModuleRn.podspec"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "android:build": "flutter build aar",
+    "ios:build": "flutter build ios-framework --cocoapods && yarn ios:zip",
+    "ios:zip": "cd ./build/ios/framework && zip -r Debug.zip Debug && zip -r Release.zip Release && find . -name \"*.xcframework\" -type d -exec rm -rf {} \\;",
+    "web:build": "flutter build web",
+    "test": "flutter test"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/github_account/flutter_module_rn.git",
     "baseUrl": "https://github.com/github_account/flutter_module_rn"
   },
+  "homepage": "https://flutter.dev/",
   "keywords": [
     "react-native"
   ],

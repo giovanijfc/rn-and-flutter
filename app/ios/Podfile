@@ -1,5 +1,7 @@
 require_relative '../node_modules/react-native/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+# import `use_flutter_module_rn` function
+require_relative '../node_modules/flutter-module-rn/ios-rn/pods'
 
 platform :ios, '11.0'
 
@@ -23,6 +25,11 @@ target 'app' do
   # you should disable the next line.
   use_flipper!()
 
+  # reference flutter-module-rn pods
+  use_flutter_module_rn!()
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  
   post_install do |installer|
     react_native_post_install(installer)
     __apply_Xcode_12_5_M1_post_install_workaround(installer)

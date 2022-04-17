@@ -1,30 +1,18 @@
-# flutter_module_rn.podspec
+# FlutterModuleRn.podspec
 
-require "json"
-
-package = JSON.parse(File.read(File.join(__dir__, "package.json")))
+require './ios-rn/Podspecs/common'
 
 Pod::Spec.new do |s|
-  s.name         = "flutter_module_rn"
-  s.version      = package["version"]
-  s.summary      = package["description"]
+  setCommonProps(s)
+  s.name         = "FlutterModuleRn"
   s.description  = <<-DESC
-                  flutter_module_rn
+                    flutter_module_rn
                    DESC
-  s.homepage     = "https://github.com/github_account/flutter_module_rn"
-  # brief license entry:
-  s.license      = "MIT"
-  # optional - use expanded license entry instead:
-  # s.license    = { :type => "MIT", :file => "LICENSE" }
-  s.authors      = { "Your Name" => "yourname@email.com" }
-  s.platforms    = { :ios => "9.0" }
-  s.source       = { :git => "https://github.com/github_account/flutter_module_rn.git", :tag => "#{s.version}" }
+  s.source_files = "ios-rn/**/*.{h,c,cc,cpp,m,mm,swift}"
 
-  s.source_files = "ios/**/*.{h,c,cc,cpp,m,mm,swift}"
-  s.requires_arc = true
-
-  s.dependency "React"
-  # ...
-  # s.dependency "..."
+  s.dependency "React-Core"
+  s.dependency "Flutter"
+  s.dependency "FlutterModuleFrameworks-Debug"
+  s.dependency "FlutterModuleFrameworks-Release"
 end
 
